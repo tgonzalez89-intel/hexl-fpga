@@ -22,6 +22,9 @@ set(KERNELS_SRCS
 
 include(GenerateExportHeader)
 add_library(hexl-fpga SHARED ${COMMON_SRCS} ${KERNELS_SRCS})
+if(NOT TARGET emulation AND NOT TARGET fpga)
+    add_dependencies(hexl-fpga emulation)
+endif()
 
 set_property(TARGET hexl-fpga PROPERTY POSITION_INDEPENDENT_CODE ON)
 
