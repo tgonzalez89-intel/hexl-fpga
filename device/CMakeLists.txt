@@ -5,7 +5,7 @@ add_subdirectory(lib/hls)
 
 add_custom_target(emulation
     COMMENT "Compiling for emulation"
-    COMMAND ${CMAKE_PROJECT_SOURCE_DIR}/device/compile.sh -march=emulator ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR}
+    COMMAND device/compile.sh -march=emulator ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR}
 )
 add_dependencies(emulation hls)
 
