@@ -70,7 +70,7 @@ void set_worksize_NTT(uint64_t ws);
 /// @param[in] coeff_modulus stores the modulus
 /// @param[in] n stores the size of the Number Theoretic Transform
 /////
-void NTT(uint64_t* operand, const uint64_t* root_of_unity_powers,
+void NTTFPGA(uint64_t* operand, const uint64_t* root_of_unity_powers,
          const uint64_t* precon_root_of_unity_powers, uint64_t coeff_modulus,
          uint64_t n);
 /// @brief
@@ -104,7 +104,7 @@ void set_worksize_INTT(uint64_t ws);
 /// @param[in] inv_n_w  stores the  normalization factor for the constant.
 /// @param[in] n stores the size of the Number Theoretic Transform
 ///
-void INTT(uint64_t* operand, const uint64_t* inv_root_of_unity_powers,
+void INTTFPGA(uint64_t* operand, const uint64_t* inv_root_of_unity_powers,
           const uint64_t* precon_inv_root_of_unity_powers,
           uint64_t coeff_modulus, uint64_t inv_n, uint64_t inv_n_w, uint64_t n);
 
