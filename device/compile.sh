@@ -18,10 +18,10 @@ compile() {
     others=${@:5}
 
     aoc ${device} \
-        ${src_dir}/device/${kernel}.cl \
+        ${src_dir}/${kernel}.cl \
         -I ${INTELFPGAOCLSDKROOT}/include/kernel_headers \
-        -I ${src_dir}/device/lib/hls \
-        -L ${bin_dir}/device/lib/hls -l ip.aoclib \
+        -I ${src_dir}/lib/hls \
+        -L ${bin_dir}/lib/hls -l ip.aoclib \
         -o ${kernel} \
         ${others}
 }
