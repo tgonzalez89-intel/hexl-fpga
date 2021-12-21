@@ -7,8 +7,9 @@ cmake -S . -B build \
 -DCMAKE_CXX_COMPILER=g++ \
 -DCMAKE_BUILD_TYPE=Release \
 -DCMAKE_INSTALL_PREFIX=install \
--DENABLE_TESTS=ON \
--DENABLE_BENCHMARK=ON
+-DENABLE_FPGA_DEBUG=ON \
+-DENABLE_TESTS=OFF \
+-DENABLE_BENCHMARK=OFF
 
 cmake --build build --target emulation
 cmake --build build -j
