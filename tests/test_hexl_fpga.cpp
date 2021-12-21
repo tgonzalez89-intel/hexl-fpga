@@ -62,11 +62,11 @@ void hexl_fpga::ntt_test() {
         std::vector<uint64_t> results = input_[i];
 
         intel::hexl::set_worksize_NTT(1);
-        intel::hexl::NTT(results.data(), roots_[i].data(), precons_[i].data(),
+        intel::hexl::NTTFPGA(results.data(), roots_[i].data(), precons_[i].data(),
                          coeff_modulus_[i], poly_degree_[i]);
         intel::hexl::NTTCompleted();
         intel::hexl::set_worksize_INTT(1);
-        intel::hexl::INTT(results.data(), roots_[i].data(), precons_[i].data(),
+        intel::hexl::INTTFPGA(results.data(), roots_[i].data(), precons_[i].data(),
                           coeff_modulus_[i], 1, 1, poly_degree_[i]);
         intel::hexl::INTTCompleted();
     }

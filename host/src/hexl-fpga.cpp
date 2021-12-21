@@ -35,7 +35,7 @@ bool DyadicMultiplyCompleted() {
 }
 
 // NTT Section
-void NTT(uint64_t* coeff_poly, const uint64_t* root_of_unity_powers,
+void NTTFPGA(uint64_t* coeff_poly, const uint64_t* root_of_unity_powers,
          const uint64_t* precon_root_of_unity_powers, uint64_t coeff_modulus,
          uint64_t n) {
     intel::hexl::fpga::NTT(coeff_poly, root_of_unity_powers,
@@ -47,7 +47,7 @@ void set_worksize_NTT(uint64_t ws) { intel::hexl::fpga::set_worksize_NTT(ws); }
 bool NTTCompleted() { return intel::hexl::fpga::NTTCompleted(); }
 
 // INTT Section
-void INTT(uint64_t* coeff_poly, const uint64_t* inv_root_of_unity_powers,
+void INTTFPGA(uint64_t* coeff_poly, const uint64_t* inv_root_of_unity_powers,
           const uint64_t* precon_inv_root_of_unity_powers,
           uint64_t coeff_modulus, uint64_t inv_n, uint64_t inv_n_w,
           uint64_t n) {

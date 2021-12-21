@@ -50,7 +50,7 @@ void inv_ntt::load_ntt_data(size_t work_size) {
 void inv_ntt::fpga_inv_ntt_test(size_t work_size) {
     intel::hexl::set_worksize_INTT(work_size);
     for (unsigned int j = 0; j < work_size; j++) {
-        intel::hexl::INTT(input_.data() + j * poly_degree_, inv_roots_.data(),
+        intel::hexl::INTTFPGA(input_.data() + j * poly_degree_, inv_roots_.data(),
                           inv_precons_.data(), coeff_modulus_, inv_n_, inv_n_w_,
                           poly_degree_);
     }
