@@ -5,13 +5,13 @@ add_subdirectory(lib/hls)
 
 add_custom_target(emulation
     COMMENT "Compiling for emulation"
-    COMMAND ${CMAKE_SOURCE_DIR}/device/compile.sh -march=emulator ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR}
+    COMMAND ${CMAKE_PROJECT_SOURCE_DIR}/device/compile.sh -march=emulator ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR}
 )
 add_dependencies(emulation hls)
 
 add_custom_target(fpga
     COMMENT "Compiling FPGA bitstream"
-    COMMAND ${CMAKE_SOURCE_DIR}/device/compile.sh -board=pac_s10_usm ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR}
+    COMMAND ${CMAKE_PROJECT_SOURCE_DIR}/device/compile.sh -board=pac_s10_usm ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR}
 )
 add_dependencies(fpga hls)
 
